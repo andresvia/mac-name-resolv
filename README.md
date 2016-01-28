@@ -14,7 +14,8 @@ or send a pull request.
        the POSIX system call, [gethostbyname] [1].
      - An exception to this are utilities like [Vagrant] [2] and
        [docker-machine] [3], those (apparently) will read the `resolv.conf`
-       file and propagate its settings to the managed virtual machines.
+       file and propagate its settings to the managed virtual machines during
+       boot.
    - MacOS manages `resolv.conf` and determines the behavior of `gethostbyname`
        according to system settings (set by `scutil` and graphical
        configuration tools), also which networks are currently connected;
