@@ -51,6 +51,7 @@ password add this to your sudoers.
     <YOURNAME> ALL=(ALL)	NOPASSWD: NOPASSWD: /usr/sbin/scutil, \
         NOPASSWD: /usr/sbin/networksetup
 
+
  - If `dlite` executable is found, `dlite` is assumed to be running.
 
 Example
