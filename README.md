@@ -47,10 +47,10 @@ to change the default behavior.
  - I expect your user can sudo `scutil` and `networksetup` to avoid asking
 password add this to your sudoers.
 
-
-    <YOURNAME> ALL=(ALL)	NOPASSWD: NOPASSWD: /usr/sbin/scutil, \
-        NOPASSWD: /usr/sbin/networksetup
-
+```
+<YOURNAME> ALL=(ALL)	NOPASSWD: NOPASSWD: /usr/sbin/scutil, \
+    NOPASSWD: /usr/sbin/networksetup
+```
 
  - If `dlite` executable is found, `dlite` is assumed to be running.
 
