@@ -41,9 +41,14 @@ then
 EOF
 fi
 
-echo -----------------------------
-echo networksetup ethernet - wi-fi
-echo -----------------------------
+echo ------------
+echo networksetup
+echo ------------
 
-sudo networksetup -getdnsservers 'ethernet'
-sudo networksetup -getdnsservers 'wi-fi'
+sudo networksetup -listallnetworkservices |
+sed 1d |
+while read iface
+do
+  echo -n "$iface => "
+  sudo networksetup -getdnsservers "$iface"
+done

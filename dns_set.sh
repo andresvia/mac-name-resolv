@@ -40,5 +40,9 @@ EOF
   fi
 fi
 
-sudo networksetup -setdnsservers 'ethernet' "$dns_set"
-sudo networksetup -setdnsservers 'wi-fi'    "$dns_set"
+sudo networksetup -listallnetworkservices |
+sed 1d |
+while read iface
+do
+  sudo networksetup -setdnsservers "$iface" "$dns_set"
+done
