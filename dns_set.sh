@@ -29,7 +29,7 @@ EOF
     then
       ssh -T docker@local.docker << EOF > /dev/null
       sudo tee /etc/resolv.conf << TEE
-      nameserver $dns_set
+nameserver $dns_set
 TEE
 EOF
     fi
@@ -43,7 +43,7 @@ EOF
       then
         docker-machine ssh $docker_machine_name << EOF > /dev/null
           sudo tee /etc/resolv.conf << TEE
-            nameserver $dns_set
+nameserver $dns_set
 TEE
 EOF
       fi
