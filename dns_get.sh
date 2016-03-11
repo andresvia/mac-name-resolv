@@ -31,7 +31,7 @@ then
 EOF
 fi
 
-if docker-machine ls -filter state=running | grep -q "^$docker_machine_name"
+if docker-machine ls -filter state=Running | grep -q "^$docker_machine_name"
 then
   echo --------------
   echo docker-machine

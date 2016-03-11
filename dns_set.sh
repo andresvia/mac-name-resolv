@@ -39,7 +39,7 @@ EOF
   then
     if which docker-machine > /dev/null 2>&1
     then
-      if docker-machine ls -filter state=running | grep -q "^$docker_machine_name"
+      if docker-machine ls -filter state=Running | grep -q "^$docker_machine_name"
       then
         docker-machine ssh $docker_machine_name << EOF > /dev/null
           sudo tee /etc/resolv.conf << TEE
