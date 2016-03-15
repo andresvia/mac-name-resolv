@@ -31,7 +31,7 @@ then
 EOF
 fi
 
-if docker-machine ls -filter state=Running | grep -q "^$docker_machine_name"
+if which docker-machine >/dev/null 2>&1 && docker-machine ls -filter state=Running | grep -q "^$docker_machine_name"
 then
   echo --------------
   echo docker-machine
