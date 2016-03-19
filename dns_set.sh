@@ -25,7 +25,7 @@ EOF
 
   if [[ 'dlite' =~ $what ]]
   then
-    if which dlite > /dev/null 2>&1
+    if which dlite > /dev/null 2>&1 && pgrep dlite > /dev/null 2>&1
     then
       ssh -T docker@local.docker << EOF > /dev/null
       sudo tee /etc/resolv.conf << TEE
