@@ -16,12 +16,15 @@ do
 EOF
 done
 
-echo -----------
-echo resolv.conf
-echo -----------
-awk '$1=="nameserver" {print $2}' /etc/resolv.conf
+if [ -e /etc/resolv.conf ]
+then
+  echo -----------
+  echo resolv.conf
+  echo -----------
+  awk '$1=="nameserver" {print $2}' /etc/resolv.conf
+fi
 
-if which dlite > /dev/null 2>&1
+if which dlite > /dev/null 2>&1 && pgrep dlite > /dev/null 2>&1
 then
   echo --------------
   echo docker -dlite-

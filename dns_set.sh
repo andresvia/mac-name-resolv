@@ -13,13 +13,16 @@ then
     scutil <<< "list State:/Network/Service/[^/]+/DNS" |
     while read subkey index eq network_service_dns
     do
-      sudo scutil << EOF
-        open
-        d.init
-        d.add ServerAddresses * $dns_set
-        set $network_service_dns
-        quit
+      if [ ! -z "$network_service_dns" ]
+      then
+        sudo scutil << EOF
+         open
+         d.init
+         d.add ServerAddresses * $dns_set
+         set $network_service_dns
+         quit
 EOF
+      fi
     done
   fi
 
